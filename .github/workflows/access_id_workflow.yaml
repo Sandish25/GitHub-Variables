@@ -1,0 +1,19 @@
+
+name: Git_Variable
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  repo_var:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: prints a message containing the ACCESS_ID
+        run: echo "The ACCESS_ID is ${{ vars.ACCESS_ID }}"
+
